@@ -5,7 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var allRouter = require('./routes/all');
 var countriesRouter = require('./routes/countries');
+
+var favicon = require('serve-favicon');
 
 var app = express();
 
@@ -19,7 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(favicon(path.join(__dirname,'public','img','favicon.png')));
+
 app.use('/', indexRouter);
+app.use('/all', allRouter);
 app.use('/countries', countriesRouter);
 
 // catch 404 and forward to error handler
