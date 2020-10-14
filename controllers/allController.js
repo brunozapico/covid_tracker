@@ -9,7 +9,7 @@ module.exports = {
           .then(response => response.json())
           .then(data => {
             let info = generateInfo(data);
-            res.status(200).send(info);
+            res.render('all.ejs', { info });
           });
         } catch (err) {
           res.status(500).json({message: err});

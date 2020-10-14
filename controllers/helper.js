@@ -11,10 +11,10 @@ module.exports = {
             "active": data.active,
             "population": data.population,
             "affected_countries": data.affectedCountries ? data.affectedCountries : null,
-            "cases_percentaje": `${parseFloat(data.cases / data.population * 100).toFixed(2)}%`,
-            "deaths_percentaje": `${parseFloat(data.deaths / data.cases * 100).toFixed(2)}%`,
-            "recovered_percentaje": `${parseFloat(data.recovered / data.cases * 100).toFixed(2)}%`,
-            "active_percentaje": `${parseFloat(data.active / data.cases * 100).toFixed(2)}%`
+            "cases_percentaje": parseFloat(data.cases / data.population * 100).toFixed(2),
+            "deaths_percentaje": parseFloat(data.deaths / data.cases * 100).toFixed(2),
+            "recovered_percentaje": parseFloat(data.recovered / data.cases * 100).toFixed(2),
+            "active_percentaje": parseFloat(data.active / data.cases * 100).toFixed(2)
         };
 
         return result;

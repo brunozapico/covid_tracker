@@ -18,22 +18,12 @@
                 </div>
             </div>
             <div class="row justify-content-md-center">
-                <div class="col">
-                    <div class="form_container">
-                        <form action="/countries" method="POST" autocomplete="off">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Country" aria-label="Country" aria-describedby="search_btn_small" name="country" id="country_input">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="submit" id="search_btn_small"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                            <div class="form_buttons_div mg_btn">
-                                <a href="/all">WORLD DATA</a>
-                                <button type="submit" class="search_btn mg_btn" id="search_btn">SEARCH</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col error_col">
+                    <h1 class="error_phrase">Sorry, couldn't find what you asked for</h1>
                 </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <a href="/" class="main_link">Back to main page</a>
             </div>
         </main>
         <footer>
@@ -44,6 +34,5 @@
             </div>
         </footer>
     </div>
-    <script src="/js/search.js"></script>
 </body>
 </html>

@@ -8,8 +8,11 @@ module.exports = {
           fetch(`${url}countries/${req.params.country}?strict=false&allowNull=true`)
           .then(response => response.json())
           .then(data => {
-            let country = generateInfo(data);
-            res.status(200).send(country);
+            if(data.country) {
+              let country = generateInfo(data);
+              res.render('info', { country });
+            }
+            res.render('not_found');
           });
         } catch (err) {
           res.status(500).json({message: err});

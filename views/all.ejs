@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>info</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/info.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row justify-content-md-center top_div">
+                <div class="logo_div">
+                    <img src="/img/covid_logo.jpg" alt="COVID LOGO">
+                </div>
+            </div>
+            <div class="row title_row">
+                <h1 class="title">Countries affected: <%= info.affected_countries %></h1>
+            </div>
+            <div class="row content_row">
+                <div class="col-3 item_col">
+                    <h3 class="info_title">TOTAL CASES</h3>
+                    <h1 class="info_amount"><%= info.total_cases %></h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">TOTAL DEATHS</h3>
+                    <h1 class="info_amount"><%= info.total_deaths %></h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">RECOVERED</h3>
+                    <h1 class="info_amount"><%= info.recovered %></h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">ACTIVE</h3>
+                    <h1 class="info_amount"><%= info.active %></h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">TODAY CASES</h3>
+                    <h1 class="info_amount">
+                        <% if (info.today_cases) { %>
+                            <%= info.today_cases %>
+                        <% } else { %>
+                            NA
+                        <% } %>
+                    </h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">TODAY DEATHS</h3>
+                    <h1 class="info_amount">
+                        <% if (info.today_deaths) { %>
+                            <%= info.today_deaths %>
+                        <% } else { %>
+                            NA
+                        <% } %>
+                    </h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">TODAY RECOVERED</h3>
+                    <h1 class="info_amount">
+                        <% if (info.today_recovered) { %>
+                            <%= info.today_recovered %>
+                        <% } else { %>
+                            NA
+                        <% } %>
+                    </h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">POPULATION</h3>
+                    <h1 class="info_amount"><%= info.population %></h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">CASES %</h3>
+                    <h1 class="info_amount"><%= info.cases_percentaje %>%</h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">DEATHS %</h3>
+                    <h1 class="info_amount"><%= info.deaths_percentaje %>%</h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">RECOVERED %</h3>
+                    <h1 class="info_amount"><%= info.recovered_percentaje %>%</h1>
+                    <div class="info_bar"></div>
+                </div>
+                <div class="col-3 item_col">
+                    <h3 class="info_title">ACTIVE %</h3>
+                    <h1 class="info_amount"><%= info.active_percentaje %>%</h1>
+                    <div class="info_bar"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="row justify-content-md-center footer_div">
+            <div class="col footer_col">
+                <span class="powered_footer">Powered by <a href="https://disease.sh/docs/#/" target="_blank">disease.sh</a> - design by <a href="https://www.linkedin.com/in/brunozapico/" target="_blank">Bruno Zapico</a></span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
